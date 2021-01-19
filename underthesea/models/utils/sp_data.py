@@ -3,7 +3,7 @@
 import torch
 import torch.distributed as dist
 
-from underthesea.utils.sp_alg import kmeans
+from underthesea.models.utils.sp_alg import kmeans
 
 
 class Dataset(torch.utils.data.Dataset):

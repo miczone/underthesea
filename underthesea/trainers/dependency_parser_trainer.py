@@ -6,16 +6,16 @@ import torch.distributed as dist
 import torch.nn as nn
 from torch.optim import Adam
 from torch.optim.lr_scheduler import ExponentialLR
-from underthesea.transforms.conll import CoNLL, progress_bar
+from underthesea.models.transforms.conll import CoNLL, progress_bar
 from underthesea.models.dependency_parser import DependencyParser
 from underthesea.utils import device, logger
-from underthesea.utils.sp_common import pad, unk, bos
-from underthesea.utils.sp_config import Config
-from underthesea.utils.sp_data import Dataset
-from underthesea.utils.sp_embedding import Embedding
-from underthesea.utils.sp_field import Field, SubwordField
-from underthesea.utils.sp_metric import Metric, AttachmentMetric
-from underthesea.utils.sp_parallel import DistributedDataParallel as DDP, is_master
+from underthesea.models.utils.sp_common import pad, unk, bos
+from underthesea.models.utils.sp_config import Config
+from underthesea.models.utils.sp_data import Dataset
+from underthesea.models.utils.sp_embedding import Embedding
+from underthesea.models.utils.sp_field import Field, SubwordField
+from underthesea.models.utils.sp_metric import Metric, AttachmentMetric
+from underthesea.models.utils.sp_parallel import DistributedDataParallel as DDP, is_master
 
 
 class DependencyParserTrainer:

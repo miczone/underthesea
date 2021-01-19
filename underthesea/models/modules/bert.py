@@ -4,7 +4,7 @@ import torch.nn as nn
 from torch.nn.utils.rnn import pad_sequence
 from transformers import AutoConfig, AutoModel
 
-from underthesea.modules.scalar_mix import ScalarMix
+from underthesea.models.modules.scalar_mix import ScalarMix
 
 
 class BertEmbedding(nn.Module):

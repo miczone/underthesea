@@ -3,23 +3,23 @@
 import os
 from datetime import datetime
 from underthesea.utils import logger, device
-from underthesea.transforms.conll import progress_bar
-from underthesea.utils.sp_data import Dataset
-from underthesea.utils.sp_field import Field
-from underthesea.utils.sp_fn import ispunct
-from underthesea.utils.sp_init import PRETRAINED
-from underthesea.utils.sp_metric import AttachmentMetric
+from underthesea.models.transforms.conll import progress_bar
+from underthesea.models.utils.sp_data import Dataset
+from underthesea.models.utils.sp_field import Field
+from underthesea.models.utils.sp_fn import ispunct
+from underthesea.models.utils.sp_init import PRETRAINED
+from underthesea.models.utils.sp_metric import AttachmentMetric
 import torch
 import torch.nn as nn
 from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence
-from underthesea.transforms.conll import CoNLL
-from underthesea.modules.base import CharLSTM, IndependentDropout, BiLSTM, SharedDropout, MLP, Biaffine
-from underthesea.modules.bert import BertEmbedding
-from underthesea.utils.sp_alg import eisner, mst
-import underthesea.modules.nn
+from underthesea.models.transforms.conll import CoNLL
+from underthesea.models.modules.base import CharLSTM, IndependentDropout, BiLSTM, SharedDropout, MLP, Biaffine
+from underthesea.models.modules.bert import BertEmbedding
+from underthesea.models.utils.sp_alg import eisner, mst
+import underthesea.models.modules.nn
 
 
-class DependencyParser(underthesea.modules.nn.Model):
+class DependencyParser(underthesea.models.modules.nn.Model):
     r"""
     The implementation of Biaffine Dependency Parser.
 

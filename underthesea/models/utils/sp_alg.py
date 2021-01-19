@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import torch
-from underthesea.utils.sp_fn import pad, stripe
+from underthesea.models.utils.sp_fn import pad, stripe
 
 
 def kmeans(x, k, max_it=32):
